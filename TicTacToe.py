@@ -32,7 +32,7 @@ class Game:
         for i in range(3):
             print(self.game[i])
     
-    def add_move(self, y):
+    def add_move(self, y, show_board="Yes"):
 
         game=self.game
 
@@ -40,7 +40,7 @@ class Game:
             print("X has already won")
             
         if win_check(game) == "O":
-            print("0 has already won")
+            print("O has already won")
 
         else:
 
@@ -66,12 +66,12 @@ class Game:
                 if win_check(game) =="X":
                     print("X has won")
                 
-                if win_check(game) =="0":
-                    print("0 has won")
-
-        for i in range(3):
-            print(self.game[i])
-        print("")
+                if win_check(game) =="O":
+                    print("O has won")
+        if show_board=="Yes":
+            for i in range(3):
+                print(self.game[i])
+            print("")
 
         return Game(game)
 
